@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Дорога в Гузерипль</title>
+    <script>
+      // GitHub Pages не знает про маршруты SPA: запоминаем адрес и уходим на index.
+      (function () {
+        var l = window.location
+        var segments = l.pathname.split('/').filter(Boolean)
+        // На project-страницах первый сегмент — имя репозитория.
+        var base = l.hostname.endsWith('github.io') && segments.length > 0 ? '/' + segments[0] + '/' : '/'
+        sessionStorage.setItem('spa-redirect', l.pathname + l.search + l.hash)
+        l.replace(base)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
